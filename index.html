@@ -86,12 +86,12 @@
                 >
               </li>
               <li class="border-b border-inherit">
-                <a href="#" class="block p-3 hover:text-brand-primary"
+                <a href="#Team" class="block p-3 hover:text-brand-primary"
                   >Pricing</a
                 >
               </li>
               <li class="border-b border-inherit">
-                <a href="#" class="block p-3 hover:text-brand-primary"
+                <a href="#Help" class="block p-3 hover:text-brand-primary"
                   >About us</a
                 >
               </li>
@@ -122,8 +122,8 @@
           <ul class="hidden gap-10 font-medium lg:flex">
             <li><a href="#Companies">How It Works</a></li>
             <li><a href="#Works">Our Work</a></li>
-            <li><a href="">Pricing</a></li>
-            <li><a href="">About Us</a></li>
+            <li><a href="#Team">Pricing</a></li>
+            <li><a href="#Help">About Us</a></li>
           </ul>
 
           <!-- CTA button -->
@@ -135,7 +135,7 @@
             >
           </div>
         </header>
-        <hr class="my-4 hidden border-t-2 lg:block" />
+        <hr class="hidden border-t-2 lg:block" />
       </section>
 
       <!-- Hero -->
@@ -144,7 +144,7 @@
           class="container mb-[67px] px-3 lg:mx-auto lg:mb-16 lg:mt-[84px] lg:flex lg:max-w-screen-2xl lg:items-center lg:justify-between"
         >
           <div class="lg:w-1/2">
-            <h1 class="text-4xl font-semibold lg:text-8xl">
+            <h1 class="mt-5 text-4xl font-semibold lg:text-8xl">
               We Take Care Of Your Brand
             </h1>
             <p
@@ -564,6 +564,225 @@
                   professional approach made the process a breeze. Creativity
                   flowed, and the results were beyond my expectations.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey -->
+      <section id="Journey">
+        <div class="relative z-10 px-5 py-16 lg:py-[122px]">
+          <div
+            class="container relative mx-auto items-center justify-between rounded-[56px] bg-[#232038] py-5 lg:mb-[141px] lg:mt-[122px] lg:flex lg:px-[87px] lg:py-[32px]"
+          >
+            <img
+              src="/src/img/grid.png"
+              alt="bg-image"
+              class="absolute inset-0 z-0 hidden rounded-3xl object-cover lg:block lg:w-[1565px]"
+            />
+            <div class="px-10 lg:z-10 lg:mr-[250px] lg:px-[80px] lg:py-[102px]">
+              <h2 class="text-[26px] font-medium text-white lg:text-[56px]">
+                Start Your Journey With Us Now
+              </h2>
+              <button class="btn z-10 mt-[15px] lg:mt-[80px]">Start Now</button>
+            </div>
+            <div>
+              <img
+                class="z-10 hidden w-[500px] lg:block"
+                src="/src/img/journey.png"
+                alt="journey-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Help -->
+      <section id="Help">
+        <div class="container mx-auto lg:py-[141px]">
+          <div
+            class="grid grid-cols-1 px-5 lg:grid-cols-2 lg:gap-10 xl:gap-[485px]"
+          >
+            <!-- FAQ Section -->
+            <div x-data="{open:null}" class="space-y-5">
+              <div class="border-b py-4">
+                <div
+                  class="flex cursor-pointer items-center justify-between"
+                  @click="open === 1 ? open = null : open = 1"
+                >
+                  <span class="text-[20px]"
+                    >How do I sign up for the project?</span
+                  >
+                  <i
+                    :class="open === 1 ? 'fas fa-minus text-blue-500' : 'fas fa-plus text-blue-500'"
+                  ></i>
+                </div>
+                <div
+                  x-show="open === 1"
+                  x-transition:enter="transition ease-out duration-1000"
+                  x-transition:enter-start="max-h-0 opacity-0"
+                  x-transition:enter-end="max-h-screen opacity-100"
+                  x-transition:leave-start="max-h-screen opacity-100"
+                  x-transition:leave-end="max-h-0 opacity-0"
+                  class="mt-5 overflow-hidden text-base text-gray-700"
+                >
+                  You can sign up by filling out the registration form...
+                </div>
+              </div>
+
+              <div class="border-b py-4">
+                <div
+                  class="flex cursor-pointer items-center justify-between"
+                  @click="open === 2 ? open = null : open = 2"
+                >
+                  <span class="text-[20px]"
+                    >What things should I prepare before starting?</span
+                  >
+                  <i
+                    :class="open === 2 ? 'fas fa-minus text-blue-500' : 'fas fa-plus text-blue-500'"
+                  ></i>
+                </div>
+                <div
+                  x-show="open === 2"
+                  x-transition:enter="transition ease-out duration-1000"
+                  x-transition:enter-start="max-h-0 opacity-0"
+                  x-transition:enter-end="max-h-screen opacity-100"
+                  x-transition:leave-start="max-h-screen opacity-100"
+                  x-transition:leave-end="max-h-0 opacity-0"
+                  class="mt-5 overflow-hidden text-base text-gray-700"
+                >
+                  It's best to prepare the necessary documentation...
+                </div>
+              </div>
+
+              <div class="border-b py-4">
+                <div
+                  class="flex cursor-pointer items-center justify-between"
+                  @click="open === 3 ? open = null : open = 3"
+                >
+                  <span class="text-[20px]"
+                    >Does my company need help for marketing advices?</span
+                  >
+                  <i
+                    :class="open === 3 ? 'fas fa-minus text-blue-500' : 'fas fa-plus text-blue-500'"
+                  ></i>
+                </div>
+                <div
+                  x-show="open === 3"
+                  x-transition:enter="transition ease-out duration-1000"
+                  x-transition:enter-start="max-h-0 opacity-0"
+                  x-transition:enter-end="max-h-screen opacity-100"
+                  x-transition:leave-start="max-h-screen opacity-100"
+                  x-transition:leave-end="max-h-0 opacity-0"
+                  class="mt-5 overflow-hidden text-base text-gray-700"
+                >
+                  It's best to prepare the necessary documentation...
+                </div>
+              </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="mb-[141px] flex flex-col justify-center">
+              <h2 class="mt-5 text-[25px] font-medium lg:text-[40px]">
+                How We Can Help You?
+              </h2>
+              <p
+                class="mb-6 font-medium leading-relaxed tracking-wide text-brand-blackopacity lg:text-[20px]"
+              >
+                Follow our newsletter. We will regulary update our latest
+                project and availability.
+              </p>
+              <div
+                class="mb-4 flex-col items-start max-md:flex lg:items-center lg:gap-[50px]"
+              >
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  class="mr-5 rounded-full border px-10 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                />
+                <button class="btn mt-5">Lets Talk</button>
+              </div>
+              <a
+                href="#"
+                class="flex items-center font-semibold text-brand-primary lg:mt-[42px] lg:text-[20px]"
+              >
+                More FAQ <i class="fas fa-arrow-right ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="Contact">
+        <div class="bg-brand-gray lg:py-[62px]">
+          <div
+            class="container mx-auto flex-col px-5 py-12 md:flex-row md:justify-between lg:flex lg:items-center lg:py-[62px]"
+          >
+            <!-- Logo and social media -->
+            <div
+              class="md:items-start lg:flex lg:flex-col lg:items-center lg:space-y-6"
+            >
+              <!-- logo -->
+              <div class="flex items-center space-x-2">
+                <a href=""
+                  ><img
+                    src="/src/img/embrace-logo.png"
+                    alt="embrace-logo"
+                    width="144"
+                  />
+                </a>
+              </div>
+              <!-- Social Media Icons -->
+              <div
+                class="space-x-5 py-5 text-brand-primary lg:flex lg:space-x-12 lg:py-14"
+              >
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-facebook text-2xl"></i></a>
+              </div>
+              <!-- Contact Button -->
+              <button class="btn mb-5">Contact Us</button>
+            </div>
+
+            <!-- Links -->
+            <div
+              class="mt-5 grid grid-cols-1 gap-5 text-gray-700 md:mt-0 md:gap-20 md:text-left lg:grid-cols-3 lg:gap-[75px] lg:text-center"
+            >
+              <div class="flex flex-col space-y-5 lg:space-y-[48px]">
+                <a href="#" class="hover:text-blue-500">Work With Us</a>
+                <a href="#" class="hover:text-blue-500">Advertise With Us</a>
+                <a href="#" class="hover:text-blue-500">Support Us</a>
+                <a href="#" class="hover:text-blue-500">Business Advices</a>
+              </div>
+              <div class="flex flex-col space-y-5 lg:space-y-[48px]">
+                <a href="#" class="hover:text-blue-500">Private Coaching</a>
+                <a href="#" class="hover:text-blue-500">Our Work</a>
+                <a href="#" class="hover:text-blue-500">Our Commitment</a>
+                <a href="#" class="hover:text-blue-500">Our Team</a>
+              </div>
+              <div class="flex flex-col space-y-5 lg:space-y-[48px]">
+                <a href="#" class="hover:text-blue-500">About Us</a>
+                <a href="#" class="hover:text-blue-500">FAQs</a>
+                <a href="#" class="hover:text-blue-500">Report a Bug</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="Footer">
+        <div class="bg-black px-5 py-5 text-white lg:py-[50px]">
+          <div class="container mx-auto justify-between lg:flex">
+            <p class="mb-5">© 2022 Embrace, Inc. - All Rights Reserved</p>
+            <div class="grid gap-5 lg:grid-cols-2 lg:gap-[213px]">
+              <div>
+                <p>Terms of use</p>
+              </div>
+              <div>
+                <p>Privacy policy</p>
               </div>
             </div>
           </div>
