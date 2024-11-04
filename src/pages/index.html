@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embrace</title>
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="../css/output.css" />
+
+    <!-- Fonts General Sans Variabel -->
+    <link href="https://fonts.cdnfonts.com/css/general-sans" rel="stylesheet" />
+
+    <!-- Fontawesome icon -->
+    <script
+      src="https://kit.fontawesome.com/d014f0b29d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Alpine JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body
+    class="font-general font-medium antialiased"
+    x-data="{ openMenu : false }"
+  >
+    <main class="lg:flex lg:h-screen lg:flex-col">
+      <section id="Navbar">
+        <!-- Navbar -->
+        <header
+          class="container mx-auto items-center justify-center p-5 lg:flex lg:max-w-screen-2xl lg:justify-between lg:pt-[18px]"
+        >
+          <!-- Logo -->
+          <div class="hidden lg:block">
+            <a href="#Hero"
+              ><img
+                src="/src/img/embrace-logo.png"
+                alt="embrace-logo"
+                width="144"
+              />
+            </a>
+          </div>
+
+          <!-- Logo Mobile -->
+          <a href="#Hero" class="lg:hidden"
+            ><img
+              src="/src/img/embrace-logo.png"
+              alt="embrace-logo"
+              width="144"
+            />
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="absolute right-10 top-5 flex flex-col items-center align-middle lg:hidden"
+            @click="openMenu = !openMenu"
+            :aria-expanded="openMenu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!-- Sidebar Navbar -->
+          <nav
+            id="MobileNav"
+            class="fixed bottom-0 left-0 right-0 top-0 z-10 backdrop-blur-2xl"
+            :hidden="!openMenu"
+          >
+            <ul
+              class="absolute bottom-0 right-0 top-0 z-10 w-8/12 py-4 drop-shadow-2xl"
+            >
+              <li class="border-b border-inherit">
+                <a href="#Companies" class="block p-3 hover:text-brand-primary"
+                  >How It Works</a
+                >
+              </li>
+              <li class="border-b border-inherit">
+                <a href="#Works" class="block p-3 hover:text-brand-primary"
+                  >Our Work</a
+                >
+              </li>
+              <li class="border-b border-inherit">
+                <a href="#" class="block p-3 hover:text-brand-primary"
+                  >Pricing</a
+                >
+              </li>
+              <li class="border-b border-inherit">
+                <a href="#" class="block p-3 hover:text-brand-primary"
+                  >About us</a
+                >
+              </li>
+            </ul>
+            <button
+              class="absolute bottom-0 left-0 right-0 top-7"
+              @click="openMenu = !openMenu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-2 top-2 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </nav>
+
+          <!-- Menu Navbar Desktop -->
+          <ul class="hidden gap-10 font-medium lg:flex">
+            <li><a href="#Companies">How It Works</a></li>
+            <li><a href="#Works">Our Work</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">About Us</a></li>
+          </ul>
+
+          <!-- CTA button -->
+          <div class="hidden lg:block">
+            <a
+              href="#"
+              class="block rounded-full bg-brand-primary px-[24px] py-[16px] text-white"
+              >Book A Call</a
+            >
+          </div>
+        </header>
+        <hr class="my-4 hidden border-t-2 lg:block" />
+      </section>
+
+      <!-- Hero -->
+      <section id="Hero">
+        <div
+          class="container mb-[67px] px-3 lg:mx-auto lg:mb-16 lg:mt-[84px] lg:flex lg:max-w-screen-2xl lg:items-center lg:justify-between"
+        >
+          <div class="lg:w-1/2">
+            <h1 class="text-4xl font-semibold lg:text-8xl">
+              We Take Care Of Your Brand
+            </h1>
+            <p
+              class="mt-[28px] text-[13px] font-medium text-brand-blackopacity lg:text-[20px]"
+            >
+              We care about our work and we care about our clients.
+            </p>
+            <form action="" method="post" class="flex gap-5 pt-5 lg:mt-[44px]">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                class="rounded-full border bg-gray-100 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-primary lg:w-72 lg:px-10 lg:py-2"
+              />
+              <a href="#" target="_blank">
+                <button
+                  class="block rounded-full bg-brand-primary px-4 py-2 text-white lg:px-[36px] lg:py-[22px]"
+                >
+                  Lets Talk
+                </button>
+              </a>
+            </form>
+          </div>
+          <div>
+            <img
+              src="/src/img/hero.png"
+              alt="hero-image"
+              class="mx-auto mt-3 w-[308px] md:w-[608px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Companies Partners -->
+      <section id="Companies" class="bg-brand-gray">
+        <div class="container mx-auto py-10 text-center lg:mb-[135px]">
+          <div>
+            <h2
+              class="py-2 text-[20px] font-medium md:text-[36px] lg:mb-[100px] lg:mt-[78px]"
+            >
+              Companies We Work with
+            </h2>
+          </div>
+          <div class="px-5">
+            <ul class="flex-companies">
+              <li>
+                <img
+                  src="/src/img/spotify.png"
+                  alt="spotify-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/google.png"
+                  alt="google-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/uber.png"
+                  alt="uber-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/microsoft.png"
+                  alt="microsoft-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/shopify.png"
+                  alt="shopify-logo"
+                  class="img-companies"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="px-5">
+            <ul class="flex-companies mt-10">
+              <li>
+                <img
+                  src="/src/img/evernote.png"
+                  alt="evernote-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/adobe.png"
+                  alt="adobe-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/paypal.png"
+                  alt="paypal-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/amazon.png"
+                  alt="amazon-logo"
+                  class="img-companies"
+                />
+              </li>
+              <li>
+                <img
+                  src="/src/img/asana.png"
+                  alt="asana-logo"
+                  class="img-companies"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Commitments -->
+      <section id="Commitment">
+        <div
+          class="container mx-auto grid grid-cols-1 px-5 py-10 md:grid-cols-2 md:items-center md:gap-5 lg:gap-5 lg:py-[137px] xl:grid-cols-3"
+        >
+          <div class="mb-5" class="mb-5">
+            <h2 class="h2-ul">245%</h2>
+            <p class="p-ul">More revenues for the brand</p>
+          </div>
+          <div class="mb-5">
+            <h2 class="h2-ul">130K+</h2>
+            <p class="p-ul">Audiences reached</p>
+          </div>
+          <div class="mb-5">
+            <h1 class="h1">Commitments</h1>
+            <p class="p-ul">
+              We are committed to working with you collaboratively to understand
+              your goals and create a strategy that will achieve them.
+            </p>
+          </div>
+          <div class="mb-5">
+            <h2 class="h2-ul">50+</h2>
+            <p class="p-ul">Brands trust us</p>
+          </div>
+          <div class="mb-5">
+            <h2 class="h2-ul">24+</h2>
+            <p class="p-ul">Worldwide awards</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="#Works"
+              ><p class="font-semibold text-brand-primary">Learn More</p></a
+            >
+            <i class="fa-solid fa-arrow-right text-brand-primary"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Works -->
+      <section id="Works">
+        <div class="container mx-auto md:flex md:justify-between md:py-[100px]">
+          <div class="px-5">
+            <h1 class="h1 lg:mb-[27px]">How It Works</h1>
+            <p class="p-ul lg:mt-[15px] lg:pr-28 xl:pr-72">
+              We believe that the best way to create successful marketing
+              campaigns is to work closely with our clients to understand their
+              goals and challenges.
+            </p>
+            <img
+              src="/src/img/works.png"
+              alt="Works Image"
+              class="mb-10 mt-3 w-[487px] lg:mt-[82px] xl:w-[587px]"
+            />
+          </div>
+          <div class="flex flex-col gap-5 px-5 lg:gap-[42px]">
+            <div class="flex-works">
+              <img
+                src="/src/img/discovery.png"
+                alt="icon discovery"
+                class="w-[56px] lg:w-[106px]"
+              />
+              <div>
+                <h3 class="h3">Discovery</h3>
+                <p class="p-ul">
+                  We meet with you to learn about your business, your goals, and
+                  your target audience.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex-works">
+              <img
+                src="/src/img/strategy.png"
+                alt="icon strategy"
+                class="w-[56px] lg:w-[106px]"
+              />
+              <div>
+                <h3 class="h3">Strategy</h3>
+                <p class="p-ul">
+                  We develop a customized marketing strategy that is based on
+                  your unique needs and goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex-works">
+              <img
+                src="/src/img/execution.png"
+                alt="icon execution"
+                class="w-[56px] lg:w-[106px]"
+              />
+
+              <div>
+                <h3 class="h3">Execution</h3>
+                <p class="p-ul">
+                  We execute our strategy using the latest digital marketing
+                  tools and techniques.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex-works">
+              <img
+                src="/src/img/measurement.png"
+                alt="icon measurement"
+                class="w-[56px] lg:w-[106px]"
+              />
+              <div>
+                <h3 class="h3">Measurement</h3>
+                <p class="p-ul">
+                  We track the results of our campaigns so that we can make
+                  adjustments as needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Work / Portfolio -->
+      <section id="Portfolio">
+        <div class="container mx-auto px-5 py-5 text-center lg:py-[122px]">
+          <h1 class="h1 mb-1">Our Work</h1>
+          <p class="p-ul mb-5">A glimpse of our portfolio</p>
+          <div class="mb-[30px] md:flex md:justify-between md:gap-10">
+            <div class="mb-10">
+              <img
+                src="/src/img/apple.png"
+                alt="Apple"
+                class="mb-3 w-[400px]"
+              />
+              <h4 class="h4">Apple</h4>
+            </div>
+            <div class="mb-10">
+              <img
+                src="/src/img/coca-cola.png"
+                alt="Coca-cola"
+                class="mb-3 w-[400px]"
+              />
+              <h4 class="h4">Coca-Cola</h4>
+            </div>
+            <div>
+              <img src="/src/img/nike.png" alt="Nike" class="mb-3 w-[400px]" />
+              <h4 class="h4">Nike</h4>
+            </div>
+          </div>
+          <!-- CTA Button -->
+          <a href="#" class="btn md:mt-[52px]">See more</a>
+        </div>
+      </section>
+
+      <!-- Banner -->
+      <section id="Banner" class="hidden xl:block">
+        <div class="container relative mx-auto py-[122px]">
+          <div
+            class="relative z-10 flex items-center justify-between rounded-3xl bg-gradient-to-r from-blue-500 to-blue-700 p-10 px-5"
+          >
+            <img
+              src="/src/img/bg-radial.png"
+              alt="Bg-Radial"
+              width="910"
+              class="absolute inset-0 z-0 rounded-3xl object-cover opacity-40"
+            />
+            <div class="z-10 px-[56px] py-[98px] text-white">
+              <h2 class="text-5xl font-medium leading-relaxed">
+                Elevate Your <br />
+                Brand Today
+              </h2>
+            </div>
+            <div class="z-10 px-[56px] py-[98px]">
+              <p
+                class="mb-[32px] text-[20px] font-medium leading-loose tracking-wide text-white"
+              >
+                Ready to transform your digital presence? Let's <br />
+                create magic together! book our services now!
+              </p>
+              <button
+                class="rounded-full bg-white px-[48px] py-[16px] text-2xl font-medium text-brand-secondary"
+              >
+                Book Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section id="Team">
+        <div
+          class="container mx-auto py-10 lg:flex lg:justify-between lg:py-[119px]"
+        >
+          <div class="mb-5 px-5">
+            <img
+              src="/src/img/team.png"
+              alt="Team Image"
+              class="w-[310px] lg:w-[610px]"
+            />
+          </div>
+          <div class="px-5 xl:ml-72">
+            <h1 class="h1 mb-5 lg:mb-[27px]">Meet Our Team</h1>
+            <p class="p-ul mb-10 xl:mb-[159px]">
+              Discover the brilliance behind Embrace. Our team blends innovation
+              and artistry to craft digital wonders that captivate
+            </p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="Testimonials">
+        <div class="container mx-auto lg:py-[100px]">
+          <div class="lg:flex lg:items-center lg:justify-between">
+            <div class="px-5">
+              <h1 class="h1">What Our Client Said About Us</h1>
+            </div>
+            <div class="hidden xl:block">
+              <a href="" class="rounded-full bg-brand-btngray px-8 py-8"
+                ><i
+                  class="fa-solid fa-arrow-left text-[24px] text-brand-arrowopacity"
+                ></i
+              ></a>
+            </div>
+            <div class="hidden xl:block">
+              <a href="" class="rounded-full bg-brand-primary px-8 py-8"
+                ><i class="fa-solid fa-arrow-right text-[24px] text-white"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Cards -->
+          <div
+            class="mt-10 grid grid-cols-1 gap-5 px-5 md:grid-cols-2 lg:mt-[58px] lg:grid-cols-3"
+          >
+            <div class="rounded-xl bg-brand-primary p-[40px] text-white">
+              <div class="mb-5 flex items-center lg:mb-[29px]">
+                <img
+                  src="/src/img/review1.png"
+                  alt="Review Photo"
+                  class="mr-5 w-[85px]"
+                />
+
+                <div>
+                  <h4 class="h4-review">Amelia Joseph</h4>
+                  <p class="p-review">Chief Manager</p>
+                </div>
+              </div>
+              <div>
+                <p>
+                  My vision came alive effortlessly. Their blend of casual and
+                  professional approach made the process a breeze. Creativity
+                  flowed, and the results were beyond my expectations.
+                </p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-brand-gray p-[40px]">
+              <div class="mb-5 flex items-center lg:mb-[29px]">
+                <img
+                  src="/src/img/review-2.png"
+                  alt="Review Photo"
+                  class="mr-5 w-[85px]"
+                />
+
+                <div>
+                  <h4 class="h4-review">Jacob Joshua</h4>
+                  <p class="p-review">Chief Manager</p>
+                </div>
+              </div>
+              <div>
+                <p>
+                  I found the digital expertise I needed. Their
+                  creative-professional balance exceeded expectations. Friendly
+                  interactions, exceptional outcomes. For digital enchantment,
+                  it's got to be Embrace!
+                </p>
+              </div>
+            </div>
+            <div class="rounded-xl bg-brand-primary p-[40px] text-white">
+              <div class="mb-5 flex items-center lg:mb-[29px]">
+                <img
+                  src="/src/img/review1.png"
+                  alt="Review Photo"
+                  class="mr-5 w-[85px]"
+                />
+
+                <div>
+                  <h4 class="h4-review">Amelia Joseph</h4>
+                  <p class="p-review">Chief Manager</p>
+                </div>
+              </div>
+              <div>
+                <p>
+                  My vision came alive effortlessly. Their blend of casual and
+                  professional approach made the process a breeze. Creativity
+                  flowed, and the results were beyond my expectations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tombol Scroll ke Atas -->
+      <div
+        x-data="{ showButton: false }"
+        x-init="window.addEventListener('scroll', () => { showButton = window.scrollY > 300 })"
+        x-show="showButton"
+        x-transition
+        @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="fixed bottom-6 right-6 cursor-pointer rounded-full bg-blue-500 p-3 text-white shadow-lg hover:bg-blue-600"
+        title="Back to top"
+      >
+        <!-- Ikon panah ke atas -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-3 w-3"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </div>
+    </main>
+  </body>
+</html>

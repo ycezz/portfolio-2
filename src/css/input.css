@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  @apply rounded-full bg-brand-primary px-[28px] py-[12px] text-[18px] font-medium text-white lg:px-[48px] lg:py-[16px] lg:text-2xl;
+}
+
+.flex-companies {
+  @apply flex items-center justify-between gap-3;
+}
+
+.img-companies {
+  @apply w-[120px] lg:w-[140px];
+}
+
+.h1 {
+  @apply text-3xl font-medium lg:mb-5 lg:text-[64px];
+}
+
+.h2-ul {
+  @apply text-3xl font-semibold lg:mb-5 lg:text-[64px];
+}
+
+.p-ul {
+  @apply text-[13px] text-brand-blackopacity lg:text-base;
+}
+
+.h3 {
+  @apply text-[18px] font-medium lg:text-[32px];
+}
+
+.flex-works {
+  @apply lg:flex lg:items-center lg:justify-between lg:gap-8;
+}
+
+.h4 {
+  @apply text-[20px] font-medium lg:text-[28px];
+}
+
+.h4-review {
+  @apply text-[20px] font-semibold lg:text-[28px];
+}
+
+.p-review {
+  @apply text-[14px] font-medium lg:text-[20px];
+}
